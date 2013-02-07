@@ -26,7 +26,9 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void fizzBuzz5IsBuzz() {
+    public void fizzBuzzXpleOf5IsBuzz() {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat(fizzBuzz.forValue(5), is(equalTo("Buzz")));
+        assertThat(fizzBuzz.forValue(10), is(equalTo("Buzz")));
+        assertThat(fizzBuzz.forValue(20), is(equalTo("Buzz")));
     }}
