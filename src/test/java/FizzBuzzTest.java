@@ -10,4 +10,10 @@ public class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat(fizzBuzz.forValue(1), is(equalTo("1")));
     }
+
+    @Test
+    public void fizzBuzz2Is2() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        assertThat(fizzBuzz.forValue(2), is(equalTo("2")));
+    }
 }
