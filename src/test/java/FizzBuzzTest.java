@@ -18,8 +18,10 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void fizzBuzz3IsFizz() {
+    public void fizzBuzzXpleOf3IsFizz() {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat(fizzBuzz.forValue(3), is(equalTo("Fizz")));
+        assertThat(fizzBuzz.forValue(6), is(equalTo("Fizz")));
+        assertThat(fizzBuzz.forValue(9), is(equalTo("Fizz")));
     }
 }
