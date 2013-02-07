@@ -16,4 +16,10 @@ public class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat(fizzBuzz.forValue(2), is(equalTo("2")));
     }
+
+    @Test
+    public void fizzBuzz3IsFizz() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        assertThat(fizzBuzz.forValue(3), is(equalTo("Fizz")));
+    }
 }
