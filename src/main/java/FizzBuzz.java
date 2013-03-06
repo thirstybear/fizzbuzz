@@ -3,10 +3,7 @@ public class FizzBuzz {
     private final IntToString stringProcessor;
 
     public FizzBuzz() {
-        stringProcessor = new Default();
-        IntToString fizz = new Fizz();
-        fizz.addNext(new Buzz());
-        stringProcessor.addNext(fizz);
+        stringProcessor = new Default(new Fizz(new Buzz()));
     }
 
     public String forValue(int i) {
@@ -14,16 +11,28 @@ public class FizzBuzz {
     }
 
     abstract class IntToString {
-        protected IntToString next = null;
+        protected final IntToString next;
 
-        public void addNext(IntToString processor) {
-            next = processor;
+        public IntToString() {
+            this.next = null;
+        }
+
+        public IntToString(IntToString next) {
+            this.next = next;
         }
 
         public abstract String addToString(int i, String valueSoFar);
     }
 
     class Fizz extends IntToString {
+        Fizz() {
+            super();
+        }
+
+        Fizz(IntToString next) {
+            super(next);
+        }
+
         public String addToString(int i, String valueSoFar) {
             if (i % 3 == 0) valueSoFar += "Fizz";
             if (next != null) {
@@ -34,6 +43,13 @@ public class FizzBuzz {
     }
 
     class Buzz extends IntToString {
+        Buzz() {
+        }
+
+        Buzz(IntToString next) {
+            super(next);
+        }
+
         public String addToString(int i, String valueSoFar) {
             if (i % 5 == 0) valueSoFar += "Buzz";
             if (next != null) {
@@ -45,16 +61,27 @@ public class FizzBuzz {
 
 
     class Default extends IntToString {
+        Default() {
+        }
+
+        Default(IntToString next) {
+            super(next);
+        }
+
         public String addToString(int i, String valueSoFar) {
             String result = null;
             if (next != null) {
                 result = next.addToString(i, valueSoFar);
             }
 
-            if (result == null || result.equals("")) {
+            if (stringIsEmptyOrNull(result)) {
                 return String.valueOf(i);
             }
             return result;
+        }
+
+        private boolean stringIsEmptyOrNull(String result) {
+            return result == null || result.equals("");
         }
     }
 }
