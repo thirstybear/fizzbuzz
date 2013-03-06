@@ -1,3 +1,5 @@
+package acme;
+
 public class FizzBuzz {
 
     private final IntToString stringProcessor;
