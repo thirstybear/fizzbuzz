@@ -18,31 +18,31 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void fizzBuzz1Is1() {
+    public void doesNotConvertInteger1() {
         assertThat(fizzBuzz.forValue(1), is(equalTo("1")));
     }
 
     @Test
-    public void fizzBuzz2Is2() {
+    public void doesNotConvertInteger2() {
         assertThat(fizzBuzz.forValue(2), is(equalTo("2")));
     }
 
     @Test
-    public void fizzBuzzXpleOf3IsFizz() {
+    public void convertsMultiplesOf3ToFizz() {
         assertThat(fizzBuzz.forValue(3), is(equalTo("Fizz")));
         assertThat(fizzBuzz.forValue(6), is(equalTo("Fizz")));
         assertThat(fizzBuzz.forValue(9), is(equalTo("Fizz")));
     }
 
     @Test
-    public void fizzBuzzXpleOf5IsBuzz() {
+    public void convertsMultiplesOf5ToBuzz() {
         assertThat(fizzBuzz.forValue(5), is(equalTo("Buzz")));
         assertThat(fizzBuzz.forValue(10), is(equalTo("Buzz")));
         assertThat(fizzBuzz.forValue(20), is(equalTo("Buzz")));
     }
 
     @Test
-    public void fizzBuzzXpleBoth3And5IsFizzBuzz() {
+    public void convertsMultiplesOfBoth3And5ToFizzbuzz() {
         assertThat(fizzBuzz.forValue(15), is(equalTo("FizzBuzz")));
         assertThat(fizzBuzz.forValue(30), is(equalTo("FizzBuzz")));
         assertThat(fizzBuzz.forValue(45), is(equalTo("FizzBuzz")));
