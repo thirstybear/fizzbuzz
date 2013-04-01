@@ -25,7 +25,7 @@ public class FizzBuzz {
     public String forValue(int i) {
         String convertedValue = applyNonDefaultRules(i);
 
-        if (noRulesWereApplied(convertedValue)) return defaultRule.convert(i);
+        if (noRulesWereApplied(convertedValue)) return defaultRule.applyTo(i);
         else return convertedValue;
     }
 
@@ -36,7 +36,7 @@ public class FizzBuzz {
     private String applyNonDefaultRules(int i) {
         StringBuffer result = new StringBuffer();
         for(ConversionRule rule: ruleList) {
-             result.append(rule.convert(i));
+             result.append(rule.applyTo(i));
         }
         return result.toString();
     }

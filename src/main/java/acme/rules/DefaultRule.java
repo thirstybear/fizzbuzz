@@ -1,7 +1,7 @@
 package acme.rules;
 
 public class DefaultRule implements ConversionRule {
-    public String convert(int i) {
+    public String applyTo(int i) {
         return String.valueOf(i);
     }
 }
