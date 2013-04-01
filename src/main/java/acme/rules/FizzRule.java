@@ -9,12 +9,9 @@ public class FizzRule extends ConversionRule {
         super(next);
     }
 
-    public String addToString(int i, String valueSoFar) {
-        if (i % 3 == 0) valueSoFar += "Fizz";
-        if (next != null) {
-            return next.addToString(i, valueSoFar);
-        }
-        return valueSoFar;
+    public String convert(int i) {
+        if (i % 3 == 0) return "Fizz";
+        return "";
     }
 }
 

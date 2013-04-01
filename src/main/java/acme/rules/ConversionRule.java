@@ -11,5 +11,5 @@ abstract public class ConversionRule {
         this.next = next;
     }
 
-    public abstract String addToString(int i, String valueSoFar);
+    public abstract String convert(int i);
 }

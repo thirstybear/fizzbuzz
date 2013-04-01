@@ -26,15 +26,21 @@ public class FizzBuzz {
     }
 
     public String forValue(int i) {
-        StringBuffer result = new StringBuffer();
+        String convertedValue = applyNonDefaultRules(i);
 
-        for(ConversionRule rule: ruleList) {
-            result.append(rule.addToString(i, ""));
-        }
-
-        if (result.length() == 0) return defaultRule.addToString(i, "");
-
-        return result.toString();
+        if (noRulesWereApplied(convertedValue)) return defaultRule.convert(i);
+        else return convertedValue;
     }
 
+    private boolean noRulesWereApplied(String convertedValue) {
+        return convertedValue.equals("");
+    }
+
+    private String applyNonDefaultRules(int i) {
+        StringBuffer result = new StringBuffer();
+        for(ConversionRule rule: ruleList) {
+             result.append(rule.convert(i));
+        }
+        return result.toString();
+    }
 }
