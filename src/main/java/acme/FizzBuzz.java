@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 public class FizzBuzz {
 
-    private final ConversionRule stringProcessor;
     private DefaultRule defaultRule;
     private ArrayList<ConversionRule> ruleList = new ArrayList<ConversionRule>();
 
@@ -17,8 +16,6 @@ public class FizzBuzz {
         this.defaultRule = new DefaultRule();
         add(new FizzRule());
         add(new BuzzRule());
-
-        stringProcessor = new DefaultRule(new FizzRule(new BuzzRule()));
     }
 
     private void add(ConversionRule newRule) {
