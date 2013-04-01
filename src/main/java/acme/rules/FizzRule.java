@@ -5,10 +5,6 @@ public class FizzRule extends ConversionRule {
         super();
     }
 
-    public FizzRule(ConversionRule next) {
-        super(next);
-    }
-
     public String convert(int i) {
         if (i % 3 == 0) return "Fizz";
         return "";
