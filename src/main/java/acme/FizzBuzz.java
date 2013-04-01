@@ -1,37 +1,26 @@
 package acme;
 
+import acme.rules.ConversionRule;
+
 public class FizzBuzz {
 
-    private final IntToString stringProcessor;
+    private final ConversionRule stringProcessor;
 
     public FizzBuzz() {
-        stringProcessor = new Default(new Fizz(new Buzz()));
+        stringProcessor = new DefaultRule(new FizzRule(new BuzzRule()));
     }
 
     public String forValue(int i) {
         return stringProcessor.addToString(i, "");
     }
 
-    abstract class IntToString {
-        protected final IntToString next;
 
-        public IntToString() {
-            this.next = null;
-        }
-
-        public IntToString(IntToString next) {
-            this.next = next;
-        }
-
-        public abstract String addToString(int i, String valueSoFar);
-    }
-
-    class Fizz extends IntToString {
-        Fizz() {
+    class FizzRule extends ConversionRule {
+        FizzRule() {
             super();
         }
 
-        Fizz(IntToString next) {
+        FizzRule(ConversionRule next) {
             super(next);
         }
 
@@ -44,11 +33,11 @@ public class FizzBuzz {
         }
     }
 
-    class Buzz extends IntToString {
-        Buzz() {
+    class BuzzRule extends ConversionRule {
+        BuzzRule() {
         }
 
-        Buzz(IntToString next) {
+        BuzzRule(ConversionRule next) {
             super(next);
         }
 
@@ -62,11 +51,11 @@ public class FizzBuzz {
     }
 
 
-    class Default extends IntToString {
-        Default() {
+    class DefaultRule extends ConversionRule {
+        DefaultRule() {
         }
 
-        Default(IntToString next) {
+        DefaultRule(ConversionRule next) {
             super(next);
         }
 
