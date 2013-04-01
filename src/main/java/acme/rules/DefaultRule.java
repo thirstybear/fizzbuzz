@@ -1,7 +1,7 @@
 package acme.rules;
 
 public class DefaultRule extends ConversionRule {
-    DefaultRule() {
+    public DefaultRule() {
     }
 
     public DefaultRule(ConversionRule next) {
