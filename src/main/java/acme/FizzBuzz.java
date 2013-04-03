@@ -1,9 +1,6 @@
 package acme;
 
-import acme.rules.BuzzRule;
-import acme.rules.ConversionRule;
-import acme.rules.DefaultRule;
-import acme.rules.FizzRule;
+import acme.rules.*;
 
 import java.util.ArrayList;
 
@@ -16,6 +13,7 @@ public class FizzBuzz {
         this.defaultRule = new DefaultRule();
         add(new FizzRule());
         add(new BuzzRule());
+        add(new WhizzRule());
     }
 
     private void add(ConversionRule newRule) {

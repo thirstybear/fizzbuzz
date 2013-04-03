@@ -47,4 +47,20 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz.forValue(30), is(equalTo("FizzBuzz")));
         assertThat(fizzBuzz.forValue(45), is(equalTo("FizzBuzz")));
     }
+
+    @Test
+    public void convertsMultiplesOf7ToWhizz() {
+        assertThat(fizzBuzz.forValue(7), is(equalTo("Whizz")));
+        assertThat(fizzBuzz.forValue(14), is(equalTo("Whizz")));
+    }
+
+    @Test
+    public void convertsMultiplesOfBoth3And7ToFizzWhizz() {
+        assertThat(fizzBuzz.forValue(21), is(equalTo("FizzWhizz")));
+    }
+
+    @Test
+    public void convertsMultiplesOfBoth5And7ToBuzzWhizz() {
+        assertThat(fizzBuzz.forValue(35), is(equalTo("BuzzWhizz")));
+    }
 }
