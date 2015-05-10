@@ -1,12 +1,11 @@
 package acme;
 
-import acme.FizzBuzz;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 public class FizzBuzzTest {
 
@@ -16,7 +15,6 @@ public class FizzBuzzTest {
     public void setUp() throws Exception {
         fizzBuzz = new FizzBuzz();
     }
-
     @Test
     public void doesNotConvertInteger1() {
         assertThat(fizzBuzz.forValue(1), is(equalTo("1")));
